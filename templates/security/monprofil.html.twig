@@ -1,0 +1,27 @@
+{% extends "layout/default.html.twig" %}
+
+{% block body %}
+<div class="w-full max-w-sm mx-auto py-12">
+  <div class="flex items-center bg-white p-6 rounded-lg shadow-md">
+    <div class="w-12 h-12 mr-6">
+      <img class="w-12 h-12" src="{{ asset('/assets/image/user.png') }}" alt="profil-user">
+    </div>
+    <div class="text-left">
+      <h2 class="font-medium text-lg mb-2">{{user.pseudo}}</h2>
+      <p class="text-gray-600">E-mail : {{user.email}}</p>
+
+      <img src="{{ path('app_profil', {'id': user.id}) }}" alt="">
+
+
+      <p class="text-gray-600">Membre depuis le {{user.createdAT|date('d-m-Y')}}</p>
+
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+{% endblock %}

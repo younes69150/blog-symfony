@@ -1,0 +1,30 @@
+{% extends 'layout/default.html.twig' %}
+
+
+{% block body %}
+
+{% for post in posts %}
+
+
+
+<div class="w-3/5 bg-white p-6 rounded-lg shadow-md mx-auto my-6">
+  <h3 class="text-lg font-medium mb-2">{{post.titre}} </h3>
+  <h3 class="text-lg font-medium mb-2">{{post.user.pseudo}} </h3>
+  <p class="text-gray-600 mb-4">{{post.createdAT|date('d-m-Y H:i') }}</p>
+  <p class="mb-4">
+    {{post.description}}
+  </p>
+  <div class="text-right">
+    <button class="bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600">
+      <a href="/post/{{post.id}}">Voir plus</a> 
+    </button>
+  </div>
+</div>
+
+
+
+
+{% endfor %}
+
+
+{% endblock %}
